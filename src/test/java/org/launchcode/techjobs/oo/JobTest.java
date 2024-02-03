@@ -45,13 +45,24 @@ public class JobTest {
     }
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
-        Job job5 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency("Squanchiest"));
+        Job job6 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency("Squanchiest"));
         assertEquals(System.lineSeparator() +
-                "ID: 1\n" +
+                "ID: " + job6.getId() + "\n" +
                 "Name: Squancher\n" +
                 "Employer: Squanchy R US\n" +
                 "Location: Squanch\n" +
                 "Position Type: Squanchy\n" +
-                "Core Competency: Squanchiest" + System.lineSeparator(), job5.toString());
+                "Core Competency: Squanchiest" + System.lineSeparator(), job6.toString());
+    }
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job job7 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency(""));
+        assertEquals(System.lineSeparator() +
+                "ID: " + job7.getId() + "\n" +
+                "Name: Squancher\n" +
+                "Employer: Squanchy R US\n" +
+                "Location: Squanch\n" +
+                "Position Type: Squanchy\n" +
+                "Core Competency: Data not available" + System.lineSeparator(), job7.toString());
     }
 }

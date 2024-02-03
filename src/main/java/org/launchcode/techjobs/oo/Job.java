@@ -52,14 +52,15 @@ public class Job {
 @Override
 public String toString(){
         // each field should be labeled
-        // if field empty return "Data no available"
+        // if field empty return "Data not available"
+    //how to return message if field is missing??
       return System.lineSeparator() +
-              "ID: " + this.id + "\n" +
-              "Name: " + this.name + "\n" +
-              "Employer: " + this.employer + "\n" +
-              "Location: " + this.location + "\n" +
-              "Position Type: " + this.positionType + "\n" +
-              "Core Competency: " + this.coreCompetency + System.lineSeparator();
+              "ID: " + (this.id < 1 ?  "Data not available": this.id ) + "\n" +
+              "Name: " + (this.name == "" ? "Data not available" : this.name) + "\n" + //name is just a string
+              "Employer: " + (this.employer.getValue() == null ? "Data not available": this.employer) + "\n" +
+              "Location: " + (this.location.getValue() == null ? "Data not available" : this.location) + "\n" +
+              "Position Type: " + (this.positionType.getValue() == null ? "Data not available" : this.positionType) + "\n" +
+              "Core Competency: " + (this.coreCompetency.getValue() == "" ? "Data not available" : this.coreCompetency) + System.lineSeparator();
 }
     public int getId() {
         return id;
