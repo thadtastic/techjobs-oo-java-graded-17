@@ -49,7 +49,18 @@ public class Job {
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
-
+@Override
+public String toString(){
+        // each field should be labeled
+        // if field empty return "Data no available"
+      return System.lineSeparator() +
+              "ID: " + this.id + "\n" +
+              "Name: " + this.name + "\n" +
+              "Employer: " + this.employer + "\n" +
+              "Location: " + this.location + "\n" +
+              "Position Type: " + this.positionType + "\n" +
+              "Core Competency: " + this.coreCompetency + System.lineSeparator();
+}
     public int getId() {
         return id;
     }

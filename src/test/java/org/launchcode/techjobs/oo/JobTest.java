@@ -36,4 +36,15 @@ public class JobTest {
         Job job4 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency("Squanchiest"));
         assertFalse(job3.equals(job4));
     }
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job job5 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency("Squanchiest"));
+        assertEquals(System.lineSeparator() +
+                "ID: 1\n" +
+                "Name: Squancher\n" +
+                "Employer: Squanchy R US\n" +
+                "Location: Squanch\n" +
+                "Position Type: Squanchy\n" +
+                "Core Competency: Squanchiest" + System.lineSeparator(), job5.toString());
+    }
 }
