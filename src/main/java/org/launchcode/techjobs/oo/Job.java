@@ -57,9 +57,9 @@ public String toString(){
       return System.lineSeparator() +
               "ID: " + (this.id < 1 ?  "Data not available": this.id ) + "\n" +
               "Name: " + (this.name == "" ? "Data not available" : this.name) + "\n" + //name is just a string
-              "Employer: " + (this.employer.getValue() == null ? "Data not available": this.employer) + "\n" +
-              "Location: " + (this.location.getValue() == null ? "Data not available" : this.location) + "\n" +
-              "Position Type: " + (this.positionType.getValue() == null ? "Data not available" : this.positionType) + "\n" +
+              "Employer: " + (this.employer.getValue() == "" ? "Data not available": this.employer) + "\n" +
+              "Location: " + (this.location.getValue() == "" ? "Data not available" : this.location) + "\n" +
+              "Position Type: " + (this.positionType.getValue() == "" ? "Data not available" : this.positionType) + "\n" +
               "Core Competency: " + (this.coreCompetency.getValue() == "" ? "Data not available" : this.coreCompetency) + System.lineSeparator();
 }
     public int getId() {
