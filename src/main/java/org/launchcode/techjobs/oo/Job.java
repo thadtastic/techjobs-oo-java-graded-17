@@ -60,14 +60,10 @@ public String toString(){
               "Employer: " + (this.employer.getValue() == "" ? "Data not available": this.employer) + "\n" +
               "Location: " + (this.location.getValue() == "" ? "Data not available" : this.location) + "\n" +
               "Position Type: " + (this.positionType.getValue() == "" ? "Data not available" : this.positionType) + "\n" +
-              "Core Competency: " + (this.coreCompetency.getValue() == "" ? "Data not available" : this.coreCompetency) + System.lineSeparator();
+              "Core Competency: " + (this.coreCompetency.getValue().isEmpty() ? "Data not available" : this.coreCompetency) + System.lineSeparator();
 }
     public int getId() {
         return id;
-    }
-
-    public static int getNextId() {
-        return nextId;
     }
 
     public String getName() {

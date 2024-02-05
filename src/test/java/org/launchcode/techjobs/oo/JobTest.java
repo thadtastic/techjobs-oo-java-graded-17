@@ -24,7 +24,7 @@ public class JobTest {
         assertEquals("Quality control", productTester.getPositionType().getValue());
         assertEquals("Persistence", productTester.getCoreCompetency().getValue());
         // Testing class assignment of each field
-       // assertTrue(productTester.getName() instanceof Job); Name is String not an Object
+        assertTrue(productTester.getName() instanceof String); //Name is a String Object in Java!
         assertTrue(productTester.getEmployer() instanceof Employer);
         assertTrue(productTester.getLocation() instanceof Location);
         assertTrue(productTester.getPositionType() instanceof PositionType);
@@ -34,12 +34,15 @@ public class JobTest {
     public void testJobsForEquality(){
         Job job3 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency("Squanchiest"));
         Job job4 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency("Squanchiest"));
-        assertFalse(job3.equals(job4));
+        assertNotEquals(job3, job4);
     }
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job job5 = new Job("Squancher", new Employer("Squanchy R US"), new Location("Squanch"), new PositionType("Squanchy"), new CoreCompetency("Squanchiest"));
         //assertTrue(job5.toString().startsWith(System.lineSeparator() && job5.toString().endsWith(System.lineSeparator())));
+//assertEquals(String.valueOf(job5.toString().charAt(0)),(System.lineSeparator()));
+      // assertEquals(String.valueOf(job5.toString().charAt(job5.toString().length()- 1)),(System.lineSeparator()));
+
         assertTrue(job5.toString().startsWith(System.lineSeparator()));
         assertTrue(job5.toString().endsWith(System.lineSeparator()));
     }
